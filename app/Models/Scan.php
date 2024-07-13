@@ -15,6 +15,13 @@ class Scan extends Model
      *
      * @return void
      */
+   
+     protected $fillable = [
+        'scan_on', 
+        'user_id', 
+        'branch_limit',
+    ];
+    
     protected static function booted()
     {
         static::addGlobalScope(new UserWiseModelScope);
