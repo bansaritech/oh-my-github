@@ -26,10 +26,10 @@ Filament
 Step 1: Clone the repository
 
 ```
-git clone https://github.com/your-username/github-helper.git
+git clone https://github.com/your-username/oh-my-github.git
 ```
 ```
-cd github-helper
+cd oh-my-github
  ```
 
 Step 2: Install dependencies
@@ -56,7 +56,7 @@ Step 4: Configure .env file for the database
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=laravel
+DB_DATABASE=oh-my-github
 DB_USERNAME=root
 DB_PASSWORD=root
 ``` 
