@@ -14,7 +14,7 @@ class GithubRepo extends Model
         'details' => 'array'
     ];
 
-    protected $fillable = ['name', 'fork'];
+    protected $fillable = ['name', 'fork','branch_limit'];
 
     public function collaborators()
     {
