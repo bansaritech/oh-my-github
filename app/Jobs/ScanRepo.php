@@ -3,18 +3,17 @@
 namespace App\Jobs;
 
 use App\GithubClient\Broker;
-use App\Models\Collaborator;
 use App\Models\GithubRepo;
 use App\Models\Scan;
-use Collator;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
+use App\jobs\StandardJob;
 
-class ScanRepo  implements ShouldQueue
+class ScanRepo implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     use StandardJob;
@@ -42,6 +41,8 @@ class ScanRepo  implements ShouldQueue
      */
     public function handle(): void
     {
+
+   
         $this->log("\n\nJob started");
         $github = $this->github();
         $repos = $github->getRepositories();
@@ -63,4 +64,6 @@ class ScanRepo  implements ShouldQueue
             }
         }
     }
+
+    
 }
